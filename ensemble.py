@@ -24,7 +24,7 @@ class AdaBoostClassifier:
         self.weak_classifier = weak_classifier
         
         for m in range(n_weakers_limit):
-            self.weak_classifiers.append(weak_classifier(max_depth = 3))
+            self.weak_classifiers.append(weak_classifier)
         
 #        for i in range(self.n_weakers_limit):
 #            print(id(self.weak_classifiers[i]))
