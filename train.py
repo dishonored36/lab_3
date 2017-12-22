@@ -90,7 +90,7 @@ if __name__ == "__main__":
     Data = loadData("data")
     label = np.ones(1000)
     label[500:] = -1
-    train_x,train_y,validation_x,validation_y = split(Data,label,0.2)
+    train_x,train_y,validation_x,validation_y = split(Data,label,0.4)
     saveData("train",train_x)
     saveData("label",train_y)
     saveData("validation",validation_x)
@@ -106,7 +106,7 @@ if __name__ == "__main__":
     test_y = np.array(target)
     weakClassifier = DecisionTreeClassifier(max_depth=3)
     cls = AdaBoostClassifier(weakClassifier,num_classifier)
-    cls = cls.fit(train_x,train_y)
+    cls.fit(train_x,train_y)
     result_adaboost = cls.predict(test_x,0)
     print ('adaboost result: ',result_adaboost)
     print ('accuracy: ',validate_result(result_adaboost,test_y))
