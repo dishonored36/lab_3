@@ -80,7 +80,8 @@ class AdaBoostClassifier:
         print(self.alpha_array)
         for m in range(self.n_weakers_limit):
             print(id(self.weak_classifiers[m]))
-        
+        return self
+    
 
     def predict_scores(self, X):
         '''Calculate the weighted sum score of the whole base classifiers for given samples.
