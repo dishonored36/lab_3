@@ -106,7 +106,7 @@ if __name__ == "__main__":
     test_y = np.array(target)
     weakClassifier = DecisionTreeClassifier(max_depth=3)
     cls = AdaBoostClassifier(weakClassifier,num_classifier)
-    cls.fit(train_x,train_y)
+    cls = cls.fit(train_x,train_y)
     result_adaboost = cls.predict(test_x,0)
     print ('adaboost result: ',result_adaboost)
     print ('accuracy: ',validate_result(result_adaboost,test_y))
